@@ -6,7 +6,6 @@ namespace Group5_API_Project.Models
     public class Product
     {
         [Key]
-        [Range(1, int.MaxValue)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductID { get; set; }
 
@@ -21,19 +20,23 @@ namespace Group5_API_Project.Models
         [Required]
         public decimal UnitPrice { get; set; }
 
-        [Required]
         public DateTime? CreatedDate { get; set; }
 
-        [Required]
         public DateTime? UpdatedDate { get; set; }
 
-        [ForeignKey(nameof(Suppliers))]
+        [ForeignKey(nameof(Supplier))]
         public int SupplierID { get; set; }
         public Supplier? Suppliers { get; set; }
 
-        [ForeignKey(nameof(Categories))]
+        [ForeignKey(nameof(Category))]
         public int CategoryID { get; set; }
         public Category? Categories { get; set; }
 
+        public ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public Product()
+        {
+            OrderDetails = new HashSet<OrderDetail>();
+        }
     }
 }

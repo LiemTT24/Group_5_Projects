@@ -14,7 +14,6 @@ namespace Group5_API_Project.Models
         [StringLength(20, ErrorMessage = "The RoleManager name must be less than or equal 20 characters")]
         public string? RoleManagerName { get; set; }
 
-        [Required]
         [StringLength(100, ErrorMessage = "The description must be less than or equal 100 characters")]
         public string? Description { get; set; }
     }
