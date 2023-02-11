@@ -18,10 +18,8 @@ namespace Group5_API_Project.Models
         [StringLength(200, ErrorMessage = "The Description must be less than or equal 200 characters")]
         public string? Description { get; set; }
 
-        [Required]
         public DateTime? CreatedDate { get; set; }
 
-        [Required]
         public DateTime? UpdatedDate { get; set; }
 
         public Product? Products { get; set; }
