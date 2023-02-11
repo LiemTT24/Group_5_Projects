@@ -8,5 +8,6 @@ namespace Group5_API_Project.Services.ProductServices
         Task<List<Product>> AllProducts();
         Task<Product> SingleProduct(int id);
         Task<IEnumerable<Product>> SearchProducts(string name);
+        Task<bool> CheckProductName(string name);
     }
 }

@@ -6,7 +6,6 @@ namespace Group5_API_Project.Models
     public class Order
     {
         [Key]
-        [Range(1, int.MaxValue)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderID { get; set; }
 
