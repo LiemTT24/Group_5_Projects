@@ -34,5 +34,17 @@ namespace Group5_API_Project.Services.ProductServices
             }
             return await _product.ToArrayAsync();
         }
+
+        public async Task<bool> CheckProductName(string name)
+        {
+            IQueryable<Product> _product = _context.Products;
+            bool check = false;
+            if (!string.IsNullOrEmpty(name))
+            {
+                _product = _product.Where(x => x.ProductName.Contains(name));
+                if (_product.Equals(name)) check = true;
+            }
+            return check;
+        }
     }
 }

@@ -6,7 +6,6 @@ namespace Group5_API_Project.Models
     public class RoleManager
     {
         [Key]
-        [Range(1, int.MaxValue)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RoleManagerID { get; set; }
 

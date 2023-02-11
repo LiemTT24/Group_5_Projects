@@ -6,8 +6,8 @@ namespace Group5_API_Project.Models
 {
     public class Account
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Range(1, int.MaxValue)]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AccountID { get; set; }
 
         [Required]

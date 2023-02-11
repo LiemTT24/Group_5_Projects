@@ -65,10 +65,10 @@ namespace Group5_API_Project.Controllers
             }
         }
 
-        [HttpGet("duplicate/{id}")]
-        public async Task<IActionResult> DuplicateChecked(int id)
+        [HttpGet("duplicate/{name}")]
+        public async Task<IActionResult> DuplicateChecked(string name)
         {
-            bool checkDuplicate = await _productServices.AnyAsync(id);
+            bool checkDuplicate = await _productServices.CheckProductName(name);
             return Ok(!checkDuplicate);
         }
 
