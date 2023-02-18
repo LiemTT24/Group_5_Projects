@@ -35,7 +35,7 @@ namespace Group5_API_Project.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=123456;Database=Group5_ApplicationDBProject;Trusted_Connection=true;Encrypt=false");
+            optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=123456;Database=Group5_ApplicationDB;Trusted_Connection=true;Encrypt=false");
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 

@@ -2,7 +2,119 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="home">
+    <div class="home-top">
+        <div class="home-top-left">
+            <a class="text-body first-text" href="">About Us</a>
+            <a class="text-body" href="">Contact</a>
+            <a class="text-body" href="">Helps</a>
+        </div>
+
+        <div class="home-top-right">
+            <button class="button-in" type="submit">Sign In</button>
+            <button class="button-up" type="submit">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="home-top-name">
+        <div class="home-top-name-shop">
+            <a href="" class="shop-name">
+                <span class="first-name">G5</span>
+                <span class="last-name">Shopping</span>
+            </a>
+        </div>
+
+        <div class="home-top-search">
+            <form action="">
+                <div class="home-top-search-main">
+                    <input type="text" class="form-search-input" placeholder="Search for products">
+                    <div class="search">
+                        <span class="input-search">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="home-top-contact">
+            <p class="text-contact">Customer Services - (+84)12 345 6789</p>
+        </div>
+    </div>
+
+    <div class="home-navbar">
+        <div class="home-navbar-main">
+            <a href="" class="home-navbar-main-option active">Home</a>
+            <a href="" class="home-navbar-main-option">Shopping</a>
+            <a href="" class="home-navbar-main-option">Cart</a>
+            <a href="" class="home-navbar-main-option">Favorite</a>
+            <a href="" class="home-navbar-main-option">History</a>
+        </div>
+    </div>
+
+    <div class="home-carousel">
+        <div class="home-carousel-main">
+            <div class="home-carousel-left">
+                <div id="header-carousel" class="home-carousel-slide" data-ride="carousel">
+                    <ol class="home-carousel-indicators">
+                        <li class="ol-item active-slide" data-target="#header-carousel" data-slide-to="0"></li>
+                        <li class="ol-item" data-target="#header-carousel" data-slide-to="1"></li>
+                        <li class="ol-item" data-target="#header-carousel" data-slide-to="2"></li>
+                    </ol>
+               
+                    <div class="home-carousel-inner">
+                        <div class="carousel-item active-slide-img">
+                            <img class="img-carousel" src="img/carousel-1.jpg">
+                            <div class="carousel-caption">
+                                <div class="carousel-item-container">
+                                    <h1 class="item-name">Men Fashion</h1>
+                                    <p class="item-description">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a class="item-button" href="#">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-carousel" src="img/carousel-2.jpg">
+                            <div class="carousel-caption">
+                                <div class="carousel-item-container">
+                                    <h1 class="item-name">Women Fashion</h1>
+                                    <p class="item-description">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a class="item-button" href="#">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-carousel" src="img/carousel-3.jpg">
+                            <div class="carousel-caption">
+                                <div class="carousel-item-container">
+                                    <h1 class="item-name">Kids Fashion</h1>
+                                    <p class="item-description">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a class="item-button" href="#">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-carousel-right">
+                <div class="suggestion-one">
+                    <img class="img-suggestion" src="img/offer-1.jpg" alt="">
+                    <div class="suggestion-text">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white text-offer">Special Offer</h3>
+                        <button type="submit" class="button-buy">Shop Now</button>
+                    </div>
+                </div>
+                <div class="suggestion-two">
+                    <img class="img-suggestion" src="img/offer-2.jpg" alt="">
+                    <div class="suggestion-text">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white text-offer">Special Offer</h3>
+                        <button type="submit" class="button-buy">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
