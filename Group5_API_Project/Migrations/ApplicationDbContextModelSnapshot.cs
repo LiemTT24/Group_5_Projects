@@ -47,20 +47,14 @@ namespace Group5APIProject.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int>("RoleManagerID")
-                        .HasColumnType("int");
-
                     b.HasKey("AccountID");
-
-                    b.HasIndex("RoleManagerID");
 
                     b.ToTable("Accounts");
                 });
@@ -208,22 +202,26 @@ namespace Group5APIProject.Migrations
 
             modelBuilder.Entity("Group5_API_Project.Models.RoleManager", b =>
                 {
-                    b.Property<int>("RoleManagerID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleManagerID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("RoleManagerName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("RoleManagerID");
+                    b.Property<string>("NormalizedName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("RoleManagers");
                 });
@@ -255,17 +253,6 @@ namespace Group5APIProject.Migrations
                     b.HasKey("SupplierID");
 
                     b.ToTable("Suppliers");
-                });
-
-            modelBuilder.Entity("Group5_API_Project.Models.Account", b =>
-                {
-                    b.HasOne("Group5_API_Project.Models.RoleManager", "RoleManagers")
-                        .WithMany()
-                        .HasForeignKey("RoleManagerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("RoleManagers");
                 });
 
             modelBuilder.Entity("Group5_API_Project.Models.Order", b =>
