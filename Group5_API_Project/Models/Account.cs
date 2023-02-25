@@ -28,6 +28,7 @@ namespace Group5_API_Project.Models
         [StringLength(100, ErrorMessage = "Your Address must be less than or equal 100 characters")]
         public string? Address { get; set; }
 
+
         //[ForeignKey(nameof(RoleManagers))]
         //public int Id { get; set; }
         //public RoleManager? RoleManagers { get; set; }
