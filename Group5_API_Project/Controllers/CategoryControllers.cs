@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
-using Group5_API_Project.DataAccess;
 using Group5_API_Project.DTO;
 using Group5_API_Project.Models;
 using Group5_API_Project.Services.CategoryServices;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Group5_API_Project.Controllers
