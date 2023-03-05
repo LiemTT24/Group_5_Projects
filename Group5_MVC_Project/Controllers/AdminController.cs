@@ -2,9 +2,9 @@
 
 namespace Group5_MVC_Project.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Dashboard()
         {
             return View();
         }

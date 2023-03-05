@@ -10,19 +10,12 @@ namespace Group5_API_Project.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Order>(e =>
-            {
-                e.ToTable("Orders");
-                e.HasKey(order => order.OrderID);
-                e.Property(order => order.OrderDate).HasDefaultValueSql("getutcdate()");
-            });
-
             modelBuilder.Entity<OrderDetail>(e =>
             {
                 e.ToTable("OrderDetails");
                 e.HasKey(o => new { o.OrderID, o.ProductID });
-                e.HasOne(o => o.Order).WithMany(x => x.OrderDetails).HasForeignKey(x => x.OrderID).HasConstraintName("FK_Orders_OrderDetails");
-                e.HasOne(o => o.Product).WithMany(x => x.OrderDetails).HasForeignKey(x => x.ProductID).HasConstraintName("FK_Products_OrderDetails");
+                e.HasOne(or => or.Order).WithMany(x => x.OrderDetails).HasForeignKey(x => x.OrderID).HasConstraintName("FK_Order_OrderDetail");
+                e.HasOne(or => or.Product).WithMany(x => x.OrderDetails).HasForeignKey(x => x.ProductID).HasConstraintName("FK_Product_OrderDetail");
             });
         }
 
@@ -35,7 +28,7 @@ namespace Group5_API_Project.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=123456;Database=Group5_ApplicationDB;Trusted_Connection=true;Encrypt=false");
+            optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=123456;Database=DB_Group5;Trusted_Connection=true;Encrypt=false");
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
@@ -46,9 +39,9 @@ namespace Group5_API_Project.DataAccess
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<RoleManager> RoleManagers { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<OrderChecking> OrderCheckings { get; set; }
     }
 }
