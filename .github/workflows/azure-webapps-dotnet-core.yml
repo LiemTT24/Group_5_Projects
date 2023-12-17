@@ -38,7 +38,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
+      - name: Azure Login
+        uses: Azure/login@v1.5.1
+            
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2
         with:
@@ -65,6 +67,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
+  
     permissions:
       contents: none
     runs-on: ubuntu-latest
